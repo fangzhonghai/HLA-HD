@@ -1,0 +1,18 @@
+path:
+  bowtie2: /share/app/bowtie2-2.2.5
+  hlahd: /zfssz4/B2C_RD_P2/PMO/fangzhonghai/software/hlahd.1.2.1/bin
+  hla_gene_split: /zfssz4/B2C_RD_P2/PMO/fangzhonghai/software/hlahd.1.2.1/HLA_gene.split.txt
+  freq_dir: /zfssz4/B2C_RD_P2/PMO/fangzhonghai/software/hlahd.1.2.1/freq_data
+  hla_dictionary: /zfssz4/B2C_RD_P2/PMO/fangzhonghai/software/hlahd.1.2.1/dictionary
+parameters:
+  bowtie2_map: --np 0 --n-ceil L,0,0.5
+  bowtie2_pmatch: --score-min L,-1.0,0 -a
+  min_len_reads: 60
+  cut_rate: 0.95
+  nsize: 5
+resource:
+  threads: 6
+  mapping: -l vf=6G,p=6 -binding linear:6
+  fq_merge: -l vf=3G,p=1 -binding linear:1
+  split_pm_read: -l vf=2G,p=1 -binding linear:1
+  estimation: -l vf=20G,p=1 -binding linear:1
